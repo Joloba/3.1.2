@@ -27,7 +27,7 @@ public class User implements UserDetails {
     private Byte age;
     @Column
     private String email;
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<Role> rolesList;
 
     public User() {}
