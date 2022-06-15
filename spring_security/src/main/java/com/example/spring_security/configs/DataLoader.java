@@ -33,8 +33,8 @@ public class DataLoader implements ApplicationRunner {
         List<Role> userList = new ArrayList<>();
         userList.add(user);
 
-        User sergey = new User("admin", "admin", "Sergey", "Polunin", (byte) 27, "sergpolunin95@gmail.com", adminList);
-        User ivan = new User("user", "user", "Ivan", "Petrov", (byte) 43, "ivanpetrov@gmail.com", userList);
+        User sergey = new User("admin", "$2a$12$hTNiNebrp0HyvN2XadFBZeuJTD1alVx5lROfzgj195uyJHx6gjnme", "Sergey", "Polunin", (byte) 27, "sergpolunin95@gmail.com", adminList);
+        User ivan = new User("user", "$2a$12$LVBDasZuqTqwvOgKPenoyeKHIJSqZyWQP76XuHBWkxzpO3G450gh6", "Ivan", "Petrov", (byte) 43, "ivanpetrov@gmail.com", userList);
 
         userService.saveUser(sergey);
         userService.saveUser(ivan);

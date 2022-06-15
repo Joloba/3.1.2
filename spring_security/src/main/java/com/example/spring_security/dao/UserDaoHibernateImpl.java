@@ -43,7 +43,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public User getUserByUserName(String username) {
         System.out.println("TEST: " + username);
         TypedQuery<User> query = entityManager.createQuery(
-                "SELECT u FROM User u WHERE u.username = :login", User.class);
+                "SELECT u FROM User u join fetch u.rolesList WHERE u.username = :login", User.class);
         User user = query.setParameter("login", username)
                 .getSingleResult();
         System.out.println("Answer: " + user.getName());
