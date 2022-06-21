@@ -20,6 +20,13 @@
         <label for="email">Email</label>
         <input type="text" th:field="*{email}" id="email">
         <hr>
+        <select size="2" name="editRole" multiple>
+            <option th:each="role : ${roles}"
+                    th:value="${role.name}"
+                    th:text="${role.getName()}">
+            </option>
+        </select>
+        <hr>
         <input type="submit" value="Edit User">
     </div>
 </form>
